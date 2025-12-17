@@ -4,8 +4,9 @@ body {
   font-style: normal;
 }
 
-.layout {
+.header {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
+  margin-bottom: 2rem;
 }

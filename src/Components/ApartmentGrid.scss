@@ -1,0 +1,38 @@
+.apartment-grid-container {
+  background-color: #f6f6f6;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1240px;
+  width: 90%;
+}
+
+.apartment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.apartment-card {
+  background-color: #ff6060;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  h3 {
+    margin: 1rem 0 0.5rem;
+    color: white;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: white;
+  }
+}
