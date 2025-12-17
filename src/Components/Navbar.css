@@ -1,7 +1,12 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
   font-weight: 500;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  margin-right: auto;
+  height: 68px;
 }

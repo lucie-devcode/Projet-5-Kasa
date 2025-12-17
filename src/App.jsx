@@ -5,7 +5,7 @@ import Banner from "./Components/Banner.jsx";
 
 function App() {
   return (
-    <div>
+    <div className="layout">
       <Navbar />
       <Banner />
     </div>
