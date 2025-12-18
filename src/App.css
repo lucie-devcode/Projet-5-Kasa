@@ -1,12 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
 }
 
-.header {
-  max-width: 1240px;
+.page-container {
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
-  margin-bottom: 2rem;
 }

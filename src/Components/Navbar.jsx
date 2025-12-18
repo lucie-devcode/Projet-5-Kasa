@@ -8,8 +8,10 @@ function Navbar() {
       <div className="navbar-logo">
         <img src={logo} alt="Logo du site Kasa" />
       </div>
-      <div>Accueil</div>
-      <div>A propos</div>
+      <div className="navbar-links">
+        <span>Accueil</span>
+        <span>À propos</span>
+      </div>
     </nav>
   );
 }

@@ -7,12 +7,12 @@ import ApartmentGrid from "./Components/ApartmentGrid.jsx";
 function App() {
   return (
     <>
-      <div className="header">
-        <Navbar />
-        <Banner />
-      </div>
+      <Navbar />
 
-      <ApartmentGrid />
+      <main className="page-container">
+        <Banner />
+        <ApartmentGrid />
+      </main>
     </>
   );
 }
