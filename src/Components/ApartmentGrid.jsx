@@ -10,7 +10,6 @@ function ApartmentGrid() {
           <div key={logement.id} className="apartment-card">
             <img src={logement.cover} alt={logement.title} />
             <h3>{logement.title}</h3>
-            <p>{logement.location}</p>
           </div>
         ))}
       </div>
