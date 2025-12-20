@@ -4,16 +4,25 @@ import "./App.css";
 import Banner from "./Components/Banner/Banner.jsx";
 import ApartmentGrid from "./Components/ApartmentGrid/ApartmentGrid.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Apartment from "./pages/Apartment";
+import Error from "./pages/Error";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Navbar />
 
-      <main className="page-container">
-        <Banner />
-        <ApartmentGrid />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/logement/:id" element={<Apartment />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+
       <Footer />
     </>
   );
