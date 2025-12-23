@@ -41,6 +41,10 @@
 }
 
 @media (max-width: 768px) {
+  .apartment-grid-container {
+    padding: 1rem;
+  }
+
   .apartment-grid {
     grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
   }

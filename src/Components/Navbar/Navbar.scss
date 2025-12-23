@@ -16,3 +16,13 @@
   margin-right: auto;
   height: 68px;
 }
+
+.navbar-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.navbar-links a.active {
+  text-decoration: underline;
+}
