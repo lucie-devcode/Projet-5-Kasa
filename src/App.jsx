@@ -14,16 +14,20 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <Navbar />
+      <div className="app-layout">
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/logement/:id" element={<Apartment />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/logement/:id" element={<Apartment />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 }

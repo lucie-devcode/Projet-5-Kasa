@@ -13,10 +13,25 @@ body {
   margin: 0 auto;
   padding: 20px;
   margin-bottom: 2rem;
+  flex: 1;
 }
 
 @media (max-width: 768px) {
   .page-container {
     padding: 10px;
   }
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-layout > * {
+  width: 100%;
+}
+
+.content {
+  flex: 1;
 }

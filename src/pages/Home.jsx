@@ -4,10 +4,10 @@ import homeBanner from "../assets/images/photo-banner.png";
 
 function Home() {
   return (
-    <main className="page-container">
+    <div className="page-container">
       <Banner image={homeBanner} />
       <ApartmentGrid />
-    </main>
+    </div>
   );
 }
 
