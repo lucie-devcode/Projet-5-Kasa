@@ -1,31 +1,24 @@
-// import { useState } from "react";
-// import "./Collapse.scss";
+import { useState } from "react";
+import "./Collapse.scss";
 
-// function Collapse({ title, content }) {
-//   const [open, setOpen] = useState(false);
+function Collapse({ title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-//   return (
-//     <div className="collapse">
-//       <button onClick={() => setOpen(!open)}>
-//         {title}
-//         <span className={open ? "rotate" : ""}>⌄</span>
-//       </button>
+  const toggleCollapse = () => {
+    setIsOpen(!isOpen);
+  };
 
-//       {open && (
-//         <div className="collapse-content">
-//           {Array.isArray(content) ? (
-//             <ul>
-//               {content.map((item, index) => (
-//                 <li key={index}>{item}</li>
-//               ))}
-//             </ul>
-//           ) : (
-//             <p>{content}</p>
-//           )}
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
+  return (
+    <div className="collapse">
+      <button className="collapse-header" onClick={toggleCollapse}>
+        <span>{title}</span>
+        <span className={`arrow ${isOpen ? "open" : ""}`}>▼</span>
+      </button>
+      <div className={`collapse-content ${isOpen ? "open" : ""}`}>
+        {children}
+      </div>
+    </div>
+  );
+}
 
-// export default Collapse;
+export default Collapse;

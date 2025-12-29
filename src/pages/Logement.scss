@@ -111,3 +111,21 @@
     }
   }
 }
+
+.logement-details {
+  display: flex;
+  gap: 20px; // espace entre les deux collapses
+  margin-top: 20px;
+
+  > .collapse {
+    flex: 1; // prend la moitié de la largeur (ou égale)
+  }
+}
+
+/* Version mobile : colonne */
+@media (max-width: 768px) {
+  .logement-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -2,7 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import logements from "../data/logements.json";
 import "./Logement.scss";
 import Carousel from "../Components/Carousel/Carousel.jsx";
-// import Collapse from "../Components/Collapse/Collapse.jsx";
+import Collapse from "../Components/Collapse/Collapse.jsx";
 
 function Logement() {
   const { id } = useParams();
@@ -52,12 +52,20 @@ function Logement() {
             <img src={logement.host.picture} alt={logement.host.name} />
           </div>
         </section>
-      </div>
+        <section className="logement-details">
+          <Collapse title="Description">
+            <p>{logement.description}</p>
+          </Collapse>
 
-      {/* <section className="logement-collapses">
-        <Collapse title="Description" content={logement.description} />
-        <Collapse title="Équipements" content={logement.equipments} />
-      </section> */}
+          <Collapse title="Équipements">
+            <ul>
+              {logement.equipments.map((equip, index) => (
+                <li key={index}>{equip}</li>
+              ))}
+            </ul>
+          </Collapse>
+        </section>
+      </div>
     </main>
   );
 }
