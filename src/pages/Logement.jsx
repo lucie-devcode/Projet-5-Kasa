@@ -1,5 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import logements from "../data/logements.json";
+import "./Logement.scss";
 import Carousel from "../Components/Carousel/Carousel.jsx";
 // import Collapse from "../Components/Collapse/Collapse.jsx";
 
@@ -14,27 +15,29 @@ function Logement() {
 
   return (
     <main className="logement">
-      <Carousel pictures={logement.pictures} />
+      <div className="logement-container">
+        <Carousel pictures={logement.pictures} />
 
-      <section className="logement-header">
-        <div className="logement-main">
-          <h1>{logement.title}</h1>
-          <p>{logement.location}</p>
+        <section className="logement-header">
+          <div className="logement-main">
+            <h1>{logement.title}</h1>
+            <p>{logement.location}</p>
 
-          <div className="tags">
-            {logement.tags.map((tag, index) => (
-              <span key={index} className="tag">
-                {tag}
-              </span>
-            ))}
+            <div className="tags">
+              {logement.tags.map((tag, index) => (
+                <span key={index} className="tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="host">
-          <p>{logement.host.name}</p>
-          <img src={logement.host.picture} alt={logement.host.name} />
-        </div>
-      </section>
+          <div className="host">
+            <p>{logement.host.name}</p>
+            <img src={logement.host.picture} alt={logement.host.name} />
+          </div>
+        </section>
+      </div>
 
       {/* <section className="logement-collapses">
         <Collapse title="Description" content={logement.description} />
