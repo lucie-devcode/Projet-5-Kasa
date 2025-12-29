@@ -19,19 +19,34 @@ function Logement() {
         <Carousel pictures={logement.pictures} />
 
         <section className="logement-header">
+          {/* Partie gauche : titre, location, tags + rating */}
           <div className="logement-main">
             <h1>{logement.title}</h1>
             <p>{logement.location}</p>
 
-            <div className="tags">
-              {logement.tags.map((tag, index) => (
-                <span key={index} className="tag">
-                  {tag}
-                </span>
-              ))}
+            <div className="tags-rating">
+              <div className="tags">
+                {logement.tags.map((tag, index) => (
+                  <span key={index} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="rating">
+                {Array.from({ length: 5 }, (_, index) => (
+                  <span
+                    key={index}
+                    className={index < logement.rating ? "star filled" : "star"}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
+          {/* Partie droite : host */}
           <div className="host">
             <p>{logement.host.name}</p>
             <img src={logement.host.picture} alt={logement.host.name} />
