@@ -19,39 +19,46 @@ function Logement() {
         <Carousel pictures={logement.pictures} />
 
         <section className="logement-header">
-          {/* Partie gauche : titre, location, tags + rating */}
-          <div className="logement-main">
-            <h1>{logement.title}</h1>
-            <p>{logement.location}</p>
+          {/* Ligne 1 : titre/location à gauche, host à droite */}
+          <div className="header-top">
+            <div className="title-location">
+              <h1>{logement.title}</h1>
+              <p>{logement.location}</p>
+            </div>
 
-            <div className="tags-rating">
-              <div className="tags">
-                {logement.tags.map((tag, index) => (
-                  <span key={index} className="tag">
-                    {tag}
-                  </span>
+            <div className="host">
+              <div className="host-name">
+                {logement.host.name.split(" ").map((n, i) => (
+                  <p key={i}>{n}</p>
                 ))}
               </div>
-
-              <div className="rating">
-                {Array.from({ length: 5 }, (_, index) => (
-                  <span
-                    key={index}
-                    className={index < logement.rating ? "star filled" : "star"}
-                  >
-                    ★
-                  </span>
-                ))}
-              </div>
+              <img src={logement.host.picture} alt={logement.host.name} />
             </div>
           </div>
 
-          {/* Partie droite : host */}
-          <div className="host">
-            <p>{logement.host.name}</p>
-            <img src={logement.host.picture} alt={logement.host.name} />
+          {/* Ligne 2 : tags à gauche, rating à droite */}
+          <div className="header-bottom">
+            <div className="tags">
+              {logement.tags.map((tag, index) => (
+                <span key={index} className="tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="rating">
+              {Array.from({ length: 5 }, (_, index) => (
+                <span
+                  key={index}
+                  className={index < logement.rating ? "star filled" : "star"}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
           </div>
         </section>
+
         <section className="logement-details">
           <Collapse title="Description">
             <p>{logement.description}</p>

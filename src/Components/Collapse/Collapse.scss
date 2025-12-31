@@ -30,14 +30,20 @@
     transition: max-height 0.3s ease, padding 0.3s ease;
     padding: 0;
     border: none;
+    background-color: transparent;
 
     &.open {
       max-height: 1000px;
       padding: 10px 15px;
+      background-color: #f6f6f6;
+      border-radius: 5px;
     }
 
-    p {
+    p,
+    ul {
       margin: 0;
+      padding: 0;
+      list-style: none;
       font-size: 1rem;
       line-height: 1.5;
       color: #000;
