@@ -19,13 +19,21 @@ function Logement() {
         <Carousel pictures={logement.pictures} />
 
         <section className="logement-header">
-          {/* Ligne 1 : titre/location à gauche, host à droite */}
-          <div className="header-top">
+          <div className="header-left">
             <div className="title-location">
               <h1>{logement.title}</h1>
               <p>{logement.location}</p>
             </div>
+            <div className="tags">
+              {logement.tags.map((tag, index) => (
+                <span key={index} className="tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
 
+          <div className="header-right">
             <div className="host">
               <div className="host-name">
                 {logement.host.name.split(" ").map((n, i) => (
@@ -34,18 +42,6 @@ function Logement() {
               </div>
               <img src={logement.host.picture} alt={logement.host.name} />
             </div>
-          </div>
-
-          {/* Ligne 2 : tags à gauche, rating à droite */}
-          <div className="header-bottom">
-            <div className="tags">
-              {logement.tags.map((tag, index) => (
-                <span key={index} className="tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
             <div className="rating">
               {Array.from({ length: 5 }, (_, index) => (
                 <span
