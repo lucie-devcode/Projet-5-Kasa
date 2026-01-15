@@ -19,5 +19,6 @@
 @media (max-width: 480px) {
   .footer-text {
     flex-direction: column; // texte sur 2 lignes en mobile
+    padding: 40px;
   }
 }
